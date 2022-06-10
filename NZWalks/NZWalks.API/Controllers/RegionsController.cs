@@ -98,7 +98,7 @@ namespace NZWalks.API.Controllers
         }
 
 
-        // ========= DELETE BEGIN ==================================================
+        // ========= UPDATE BEGIN ==================================================
         [HttpPut]
         [Route("{id:guid}")]
         public async Task<IActionResult> UpdateRegionAsync([FromRoute] Guid id, [FromBody] Models.DTO.UpdateRegionRequest updateRegionRequest)
@@ -143,7 +143,7 @@ namespace NZWalks.API.Controllers
             var regionDTO = mapper.Map<Models.DTO.Region>(region);
 
             // Return Ok response
-            return Ok();
+            return Ok(regionDTO);
         }
     }
 }
